@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12443</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-12-19.00:51:54.790</IntrospectionTimestamp>
+      <IntrospectionStateNumber>596</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12155</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="e_order_order_id_seq">
+      <ObjectId>16389</ObjectId>
+      <StateNumber>592</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <object-type id="10" parent="3" name="currency">
+      <ObjectId>16385</ObjectId>
+      <StateNumber>591</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>EUR
+USD</Labels>
+    </object-type>
+    <table id="11" parent="3" name="e_order">
+      <ObjectId>16391</ObjectId>
+      <StateNumber>596</StateNumber>
+    </table>
+    <column id="12" parent="11" name="order_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>592</StateNumber>
+      <SequenceName>e_order_order_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;e_order_order_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="13" parent="11" name="order_number">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>592</StateNumber>
+    </column>
+    <column id="14" parent="11" name="description">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>592</StateNumber>
+    </column>
+    <column id="15" parent="11" name="currency">
+      <Position>5</Position>
+      <DataType>varchar(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>594</StateNumber>
+    </column>
+    <column id="16" parent="11" name="sum">
+      <Position>6</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>596</StateNumber>
+    </column>
+    <index id="17" parent="11" name="e_order_order_id_uindex">
+      <ObjectId>16400</ObjectId>
+      <ColNames>order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="18" parent="11" name="e_order_pkey">
+      <ObjectId>16398</ObjectId>
+      <ColNames>order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="11" name="e_order_pkey">
+      <ObjectId>16399</ObjectId>
+      <ColNames>order_id</ColNames>
+      <UnderlyingIndexName>e_order_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

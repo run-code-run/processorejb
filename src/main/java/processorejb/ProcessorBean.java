@@ -1,11 +1,11 @@
 package processorejb;
 
+import processorejb.persistence.EOrderEntity;
+import processorejb.util.Utils;
+
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
+import javax.jms.*;
 
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
@@ -21,11 +21,11 @@ public class ProcessorBean implements MessageListener {
     @Override
     public void onMessage(Message message) {
 
-        TextMessage message1 = (TextMessage) message;
+        ObjectMessage message1 = (ObjectMessage) message;
 
         try {
-            System.out.println(message1.getText());
 
+            new Utils().saveToDB((EOrderEntity) message1.getObject());
         } catch (JMSException e) {
             e.printStackTrace();
         }

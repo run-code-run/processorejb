@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="myapp">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <non-jta-data-source>java:jboss/datasources/PostgreDataSource</non-jta-data-source>
+
+        <class>processorejb.persistence.EOrderEntity</class>
+        <class>processorejb.persistence.CurrencyEntity</class>
+
+        <properties>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+
+            <property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+
+            <property name="hibernate.transaction.manager_lookup_class"
+                      value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
