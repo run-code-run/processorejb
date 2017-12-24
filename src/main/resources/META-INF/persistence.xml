@@ -5,8 +5,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <non-jta-data-source>java:jboss/datasources/PostgreDataSource</non-jta-data-source>
 
-        <class>processorejb.persistence.EOrderEntity</class>
-        <class>processorejb.persistence.CurrencyEntity</class>
+
+        <class>entities.EOrderEntity</class>
+        <class>entities.CurrencyEntity</class>
 
         <properties>
 
@@ -18,6 +19,7 @@
 
             <property name="hibernate.transaction.manager_lookup_class"
                       value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+
 
         </properties>
 
